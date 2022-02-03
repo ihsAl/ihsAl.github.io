@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+   
     <script src="js/app.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,15 +11,17 @@
     <link rel="manifest" href="manifest.json" />
    
 
-    <input type="hidden" name="description_id" id="description_id">
-    <div class="form-row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <label class="small mb-1">Description</label>
-                <input class="form-control " name="name" id ="name" type="text"
-                       placeholder="Enter Description"/>
-            </div>
-        </div>
+
+    </head>
+    <body id="hi">
+
+
+    <h1 id="H">Terminvereinbarung</h1>
+<p>Hr. Dr. Mustermann</p>
+<p>Musterstr. 1</p>
+<p>12345 Musterstadt</p>
+    
+   
         <div class="col-md-6">
             <div class="form-group">
                 <label class="small mb-1">Date</label>
@@ -26,23 +29,9 @@
             </div>
         </div>
     </div>
-    <div class="form-row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <label class="small mb-1">Category</label>
-                <input class="form-control " name="category" id="category"/>
-            </div>
-        </div>
+   
         
-    <div class="form-row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <label class="small mb-1">Amount</label>
-                <input class="form-control" id="amount" name="amount" type="number"
-                       placeholder="xxx €"/>
-            </div>
-        </div>
-        
+ 
    
         
     <div class="col-sm-4 form-group mt-4 mb-0">
@@ -50,16 +39,20 @@
     </div>
     <button onclick="showData()">Show Data</button>
 
+    <p>Termine: </p>
     <table class="table table-bordered" id="animal" width="100%" cellspacing="0">
       <tr>
-          <th>Decription</th>
-          <th>Category</th>
-          <th>Amount</th>
-          <th>Date</th>
+          
+          <th>Termin am:</th>
           
       </tr>
   </table>
 
+
+
+
+  <p><button onclick="nonPersistentNotification()">Non-persistent notification</button></p>
+  <p><button onclick="persistentNotification()">Terminvereinbarung</button></p>
 
 
  

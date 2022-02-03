@@ -9,10 +9,7 @@ function addData(){
     getData();
     
     arr.push({
-        name:document.getElementById('name').value,
-        category:document.getElementById('category').value,
         
-        amount:document.getElementById('amount').value,
         date:document.getElementById('date').value
         
     });
@@ -35,23 +32,75 @@ function showData(){
   var arr1 = new Array();
   arr1 = JSON.parse(localStorage.getItem("localData"));
 
+ 
+
   var tbl = document.getElementById('animal');
 
-  for(i = 0; i < arr1.length; i++){
+  //for(i = 0; i < arr1.length; i++){
+    
       var r = tbl.insertRow();
-      var cell1 = r.insertCell();
-      var cell2 = r.insertCell();
-      var cell3 = r.insertCell();
+      
       var cell4 = r.insertCell();
      
 
-      cell1.innerHTML = arr1[i].name;
-      cell2.innerHTML = arr1[i].category;
-      cell3.innerHTML = arr1[i].amount;
-      cell4.innerHTML = arr1[i].date;
+      
+      cell4.innerHTML = arr1[arr1.length-1].date;
      
-  }
+  //}
 
+}
+var arr2 =new Array();
+arr2 = JSON.parse(localStorage.getItem("localData"));
+var notification = arr2[arr2.length-1].date;
+
+
+
+
+
+
+/*var $status = document.getElementById('status');
+
+if ('Notification' in window) {
+  $status.innerText = Notification.permission;
+}
+
+function requestPermission() {
+  if (!('Notification' in window)) {
+    alert('Notification API not supported!');
+    return;
+  }
+  
+  Notification.requestPermission(function (result) {
+    $status.innerText = result;
+  });
+}*/
+
+function nonPersistentNotification() {
+  if (!('Notification' in window)) {
+    alert('Notification API not supported!');
+    return;
+  }
+  
+  try {
+    var notification = new Notification("Hi there - non-persistent!");
+  } catch (err) {
+    alert('Notification API error: ' + err);
+  }
+}
+
+function persistentNotification() {
+  if (!('Notification' in window) || !('ServiceWorkerRegistration' in window)) {
+    alert('Persistent Notification API not supported!');
+    return;
+  }
+  
+  try {
+    navigator.serviceWorker.getRegistration()
+      .then((reg) => reg.showNotification("Nächster Termin am:"+ notification))
+      .catch((err) => alert('Service Worker registration error: ' + err));
+  } catch (err) {
+    alert('Notification API error: ' + err);
+  }
 }
 
 

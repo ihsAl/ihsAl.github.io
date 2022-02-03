@@ -6,6 +6,12 @@
 #animal {
   border: 1px solid black;
 }
+#hi{
+  background-color: lightblue;
+}
+#H{
+  text-align: center;
+}
 
 .btn-file {
   position: relative;
@@ -22,4 +28,4 @@
   outline: none;
   background: #fff;
   cursor: inherit;
-  display: block;
+  display: block;}
