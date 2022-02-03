@@ -49,9 +49,9 @@ function showData(){
   //}
 
 }
-var arr2 =new Array();
-arr2 = JSON.parse(localStorage.getItem("localData"));
-var notification = arr2[arr2.length-1].date;
+//var arr2 =new Array();
+//arr2 = JSON.parse(localStorage.getItem("localData"));
+//var notification = arr2[arr2.length-1].date;
 
 
 
@@ -96,7 +96,7 @@ function persistentNotification() {
   
   try {
     navigator.serviceWorker.getRegistration()
-      .then((reg) => reg.showNotification("Nächster Termin am:"+ notification))
+      .then((reg) => reg.showNotification("Nächster Termin am:"))
       .catch((err) => alert('Service Worker registration error: ' + err));
   } catch (err) {
     alert('Notification API error: ' + err);
